@@ -11,19 +11,13 @@ class App extends Component {
     videos: []
   }
 
-  //constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     result: null,
-  //     videos: []
-  //   }
-  // }
-
   search = (title) => {
+    // Caches the current component so we can use it in the callback to the network call
+    let appcomponent = this;
     console.log("here");
     axios.get('https://api.studyfast.xyz/api/v1/search?search=' + title).then(function (response) {
       console.log(response);
-      this.setState({ result: response })
+      appcomponent.setState({ result: response })
     })
   }
 
