@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import axios from 'axios';
 
 export class Search extends Component {
   state = {
@@ -13,6 +14,13 @@ export class Search extends Component {
   }
 
   onChange = (e) => this.setState({ search: e.target.value });
+
+  componentDidMount() {
+    console.log("here")
+    axios.get('https://api.studyfast.xyz/api/v1/search?search=academy').then(function (response) {
+      console.log(response);
+    })
+  }
 
   render() {
     return (
