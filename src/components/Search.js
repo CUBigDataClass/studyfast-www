@@ -1,26 +1,21 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import axios from 'axios';
+//import VideoDisplay from './VideoDisplay';
+//import axios from 'axios';
 
 export class Search extends Component {
   state = {
-    search: ''
+    title: '',
   }
 
   onSubmit = (e) => {
     e.preventDefault();
     this.props.search(this.state.title);
-    this.setState({  });
+    this.setState({ title: '' });
   }
 
-  onChange = (e) => this.setState({ search: e.target.value });
+  onChange = (e) => this.setState({ title: e.target.value });
 
-  componentDidMount() {
-    console.log("here")
-    axios.get('https://api.studyfast.xyz/api/v1/search?search=academy').then(function (response) {
-      console.log(response);
-    })
-  }
 
   render() {
     return (

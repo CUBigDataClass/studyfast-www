@@ -7,13 +7,24 @@ import './App.css';
 
 class App extends Component {
   state = {
-    todos: []
+    result: null,
+    videos: []
   }
 
+  //constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     result: null,
+  //     videos: []
+  //   }
+  // }
 
-  search = () => {
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-      .then(res => this.setState({ todos: res.data }))
+  search = (title) => {
+    console.log("here");
+    axios.get('https://api.studyfast.xyz/api/v1/search?search=' + title).then(function (response) {
+      console.log(response);
+      this.setState({ result: response })
+    })
   }
 
   render() {
