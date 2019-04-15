@@ -32,7 +32,7 @@ export class Search extends Component {
           type="submit" 
           value="Search" 
           className="btn"
-          style={{flex: '1', fontSize: '17px', width: '35%', margin: 'auto'}}
+          style={{flex: '1', fontSize: '17px', width: '35%', margin: 'auto', marginBottom: '20px'}}
         />
       </form>
     )
