@@ -19,8 +19,6 @@ class App extends Component {
     axios.get('https://api.studyfast.xyz/api/v1/search?search=' + title).then(response => {
       console.log(response);
       appcomponent.setState({ videos: response.data });
-      //console.log(response.data[0]);
-      //this.setState({ videos: response.data });
       console.log(this.state.videos);
     })
   }
@@ -35,7 +33,7 @@ class App extends Component {
             <Route exact path="/" render={props => (
               <React.Fragment>
                 <Search search={this.search}/>
-                  <Videos videos={this.state.videos} />
+                <Videos videos={this.state.videos} />
               </React.Fragment>
             )} />
           </div>
