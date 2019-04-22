@@ -11,6 +11,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 RUN npm install
+RUN npm build
 
 # start app
 CMD ["npm", "start"]
