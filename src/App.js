@@ -16,7 +16,7 @@ class App extends Component {
     // Caches the current component so we can use it in the callback to the network call
     let appcomponent = this;
     console.log("here");
-    axios.get('https://api.studyfast.xyz/api/v1/search?search=' + title).then(response => {
+    axios.get('https://api.studyfast.xyz/api/v1/list?search=' + title).then(response => {
       console.log(response);
       appcomponent.setState({ videos: response.data });
       console.log(this.state.videos);
