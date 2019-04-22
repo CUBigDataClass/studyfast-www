@@ -14,4 +14,4 @@ RUN npm install
 RUN npm build
 
 # start app
-CMD ["npm", "start"]
+CMD ["serve", "-s", "build", "-l", "3000"]
