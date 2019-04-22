@@ -11,7 +11,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 RUN npm install
-RUN npm build
+RUN npm run build
 
 # start app
 CMD ["serve", "-s", "build", "-l", "3000"]
