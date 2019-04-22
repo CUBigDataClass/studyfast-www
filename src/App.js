@@ -13,6 +13,7 @@ class App extends Component {
   }
 
   search = (title) => {
+    console.log("new search func");
     // Caches the current component so we can use it in the callback to the network call
     let appcomponent = this;
     console.log("here");
