@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Search from './components/Search';
 import Header from './components/layout/header';
 import Videos from './components/Videos';
+import VideoCaption from './components/pages/VideoCaption';
 import axios from 'axios';
 import './App.css';
 
@@ -37,6 +38,7 @@ class App extends Component {
                 <Videos videos={this.state.videos} />
               </React.Fragment>
             )} />
+            <Route path="/video/:videoid" component={VideoCaption} />
           </div>
         </div>
       </Router>
