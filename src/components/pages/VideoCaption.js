@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
+import Topics from '../Topics';
 
 
 class VideoCaption extends Component {
@@ -27,11 +28,14 @@ class VideoCaption extends Component {
 	    };
 	 
 	    return (
-	      	<YouTube
-	        	videoId={this.state.videoid}
-	        	opts={opts}
-	        	onReady={this._onReady}
-	      	/>
+			<div>
+				<YouTube
+					videoId={this.state.videoid}
+					opts={opts}
+					onReady={this._onReady}
+				/>
+				<Topics segments={[false, false, true, false, false, true, true, true, false, true, false, true, false, true, true, false]}></Topics>
+			</div>
 	    );
 	}
 

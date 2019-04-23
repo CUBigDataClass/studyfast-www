@@ -28,7 +28,7 @@ class Topics extends Component {
     }
 
     render() {
-        <VizContainer>{ this.CreateStripes(this.state.segments) }</VizContainer>
+        return <VizContainer>{ this.CreateStripes(this.state.segments) }</VizContainer>
     }
 }
 
@@ -39,6 +39,8 @@ const Segment = styled.div`
 
 const VizContainer = styled.div`
     height: 50px;
-    width: 900px;
+    width: 640px;
     display: flex;
 `
+
+export default Topics;

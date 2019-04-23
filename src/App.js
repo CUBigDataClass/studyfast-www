@@ -38,7 +38,7 @@ class App extends Component {
                 <Videos videos={this.state.videos} />
               </React.Fragment>
             )} />
-            <Route path="/video/:videoid" component={VideoCaption} />
+            <Route path="/video/:videoid" component={VideoCaption} videos={this.state.videos} />
           </div>
         </div>
       </Router>
