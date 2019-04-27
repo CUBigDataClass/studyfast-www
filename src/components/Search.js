@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-//import VideoDisplay from './VideoDisplay';
-//import axios from 'axios';
 
 export class Search extends Component {
   state = {
@@ -11,7 +9,6 @@ export class Search extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.search(this.state.title);
-    this.setState({ title: '' });
   }
 
   onChange = (e) => this.setState({ title: e.target.value });

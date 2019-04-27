@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 class Topics extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            segments: []
-        }
-    }
-
     CreateStripes = (segments) => {
+        console.log(segments)
         let viz = [];
         for (let i = 0; i < segments.length; i++){
             if (segments[i] === true){
@@ -22,13 +16,8 @@ class Topics extends Component {
         return viz
     }
 
-    componentDidMount() {
-        let newsegments = this.props.segments;
-        this.setState({ segments: newsegments });
-    }
-
     render() {
-        return <VizContainer>{ this.CreateStripes(this.state.segments) }</VizContainer>
+        return <VizContainer>{ this.CreateStripes(this.props.segments) }</VizContainer>
     }
 }
 
@@ -39,8 +28,9 @@ const Segment = styled.div`
 
 const VizContainer = styled.div`
     height: 50px;
-    width: 640px;
+    width: 100%;
     display: flex;
+    border: 1px black solid;
 `
 
 export default Topics;

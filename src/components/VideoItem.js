@@ -38,14 +38,4 @@ VideoItem.propTypes = {
   link: PropTypes.string.isRequired,
 }
 
-// const btnStyle = {
-//   background: '#ff0000',
-//   color: '#fff',
-//   border: 'none',
-//   padding: '5px 9px',
-//   borderRadius: '50%',
-//   cursor: 'pointer',
-//   float: 'right'
-// }
-
 export default VideoItem

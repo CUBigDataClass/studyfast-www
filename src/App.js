@@ -1,49 +1,38 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Search from './components/Search';
-import Header from './components/layout/header';
-import Videos from './components/Videos';
-import VideoCaption from './components/pages/VideoCaption';
-import axios from 'axios';
+import { Box, Link } from 'rebass';
+import styled from 'styled-components';
+
+import VideoView from './scenes/VideoView';
+import SearchView from './scenes/VideoSearch';
 import './App.css';
 
 class App extends Component {
-  state = {
-    //result: null,
-    videos: []
-  }
-
-  search = (title) => {
-    console.log("new search func");
-    // Caches the current component so we can use it in the callback to the network call
-    let appcomponent = this;
-    console.log("here");
-    axios.get('https://api.studyfast.xyz/api/v1/list?search=' + title).then(response => {
-      console.log(response);
-      appcomponent.setState({ videos: response.data });
-      console.log(this.state.videos);
-    })
-  }
-
+  
 
   render() {
     return (
       <Router>
         <div className="App">
           <div className="container">
-            <Header />
-            <Route exact path="/" render={props => (
-              <React.Fragment>
-                <Search search={this.search}/>
-                <Videos videos={this.state.videos} />
-              </React.Fragment>
-            )} />
-            <Route path="/video/:videoid" component={VideoCaption} videos={this.state.videos} />
+            <Box p={3} fontSize={4} width={[ 1 ]} color='white' bg='Red' mb={4}>
+              <HeaderLink href='/' color='white'>StudyFast</HeaderLink>
+            </Box>
+            <Route exact path="/" component={SearchView} />
+            <Route path="/video/:videoid" component={VideoView} />
           </div>
         </div>
       </Router>
     );
   }
 }
+
+const HeaderLink = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    color: white !important;
+  }
+`
+
 
 export default App;
