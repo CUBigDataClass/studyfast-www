@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/CUBigDataClass/studyfast-www.svg?style=svg)](https://circleci.com/gh/CUBigDataClass/studyfast-www)
+[![CircleCI](https://circleci.com/gh/CUBigDataClass/studyfast-www.svg?style=svg)](https://circleci.com/gh/CUBigDataClass/studyfast-www)  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
